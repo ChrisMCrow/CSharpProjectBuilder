@@ -116,7 +116,7 @@ echo '}' >> $projectName.Solution/$projectName/Program.cs
 touch $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
 echo '<Project Sdk="Microsoft.NET.Sdk">' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
 echo '  <PropertyGroup>' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
-echo '    <TargetFramework>netcoreapp'${dotnetVersion:0:3}'</TargetFramework>' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
+echo '    <TargetFramework>netcoreapp1.1</TargetFramework>' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
 echo '  </PropertyGroup>' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
 echo '  <ItemGroup>' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
 echo '    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />' >> $projectName.Solution/$projectName.Tests/$projectName.Tests.csproj
