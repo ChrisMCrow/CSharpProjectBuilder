@@ -144,7 +144,7 @@ echo Make $projectName.Solution/$projectName/Controllers directory...
 # make project home controller file
 touch $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo 'using Microsoft.AspNetCore.Mvc;' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
-echo 'using '$projectName'.Models;'
+echo 'using '$projectName'.Models;' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo '' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo 'namespace '$projectName'.Controllers' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo '{' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
