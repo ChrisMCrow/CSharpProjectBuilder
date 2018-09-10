@@ -69,6 +69,7 @@ echo '        }' >> $projectName.Solution/$projectName/Startup.cs
 echo '' >> $projectName.Solution/$projectName/Startup.cs
 echo '        public void Configure(IApplicationBuilder app)' >> $projectName.Solution/$projectName/Startup.cs
 echo '        {' >> $projectName.Solution/$projectName/Startup.cs
+echo '            app.UseDeveloperExceptionPage();' >> $projectName.Solution/$projectName/Startup.cs
 echo '            app.UseMvc(routes =>' >> $projectName.Solution/$projectName/Startup.cs
 echo '            {' >> $projectName.Solution/$projectName/Startup.cs
 echo '                routes.MapRoute(' >> $projectName.Solution/$projectName/Startup.cs
@@ -143,6 +144,7 @@ echo Make $projectName.Solution/$projectName/Controllers directory...
 # make project home controller file
 touch $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo 'using Microsoft.AspNetCore.Mvc;' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
+echo 'using '$projectName'.Models;'
 echo '' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo 'namespace '$projectName'.Controllers' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo '{' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
