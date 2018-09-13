@@ -31,11 +31,12 @@ echo '  <PropertyGroup>' >> $projectName.Solution/$projectName/$projectName.cspr
 dotnetVersion="$(dotnet --version)"
 echo '    <TargetFramework>netcoreapp1.1</TargetFramework>' >> $projectName.Solution/$projectName/$projectName.csproj
 echo '  </PropertyGroup>' >> $projectName.Solution/$projectName/$projectName.csproj
-echo '<ItemGroup>' >> $projectName.Solution/$projectName/$projectName.csproj
-echo '  <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />' >> $projectName.Solution/$projectName/$projectName.csproj
-echo '  <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.1.2" />' >> $projectName.Solution/$projectName/$projectName.csproj
-echo '  <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />' >> $projectName.Solution/$projectName/$projectName.csproj
-echo '</ItemGroup>' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '  <ItemGroup>' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '    <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.1.2" />' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.3" />' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '  </ItemGroup>' >> $projectName.Solution/$projectName/$projectName.csproj
 echo '</Project>' >> $projectName.Solution/$projectName/$projectName.csproj
 echo Initialize $projectName.Solution/$projectName/$projectName.csproj file...
 
@@ -70,6 +71,7 @@ echo '' >> $projectName.Solution/$projectName/Startup.cs
 echo '        public void Configure(IApplicationBuilder app)' >> $projectName.Solution/$projectName/Startup.cs
 echo '        {' >> $projectName.Solution/$projectName/Startup.cs
 echo '            app.UseDeveloperExceptionPage();' >> $projectName.Solution/$projectName/Startup.cs
+echo '            app.UseStaticFiles();' >> $projectName.Solution/$projectName/Startup.cs
 echo '            app.UseMvc(routes =>' >> $projectName.Solution/$projectName/Startup.cs
 echo '            {' >> $projectName.Solution/$projectName/Startup.cs
 echo '                routes.MapRoute(' >> $projectName.Solution/$projectName/Startup.cs
@@ -154,11 +156,45 @@ echo ''
 echo '    }' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo '}' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 
-# make views and home directories
+# make views directory with Home & Shared directories
 mkdir $projectName.Solution/$projectName/Views
 echo Make $projectName.Solution/$projectName/Views directory...
 mkdir $projectName.Solution/$projectName/Views/Home
 echo Make $projectName.Solution/$projectName/Views/Home directory...
+mkdir $projectName.Solution/$projectName/Views/Shared
+echo Make $projectName.Solution/$projectName/Views/Shared directory...
+
+# make _Layout.cshtml file
+touch $projectName.Solution/$projectName/Views/Shared/_Layout
+echo '<!DOCTYPE html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '<html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '  <head>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    <meta charset="utf-8">' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    <title>$projectName</title>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    <link rel="stylesheet" href="~/css/styles.css">' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    <script src="~/js/scripts.js"></script>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '  </head>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '  <body>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '    @RenderBody()' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '  </body>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+echo '</html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+
+
+
+# make wwwroot directory with img, css, & js directories nested inside
+mkdir $projectName.Solution/$projectName/wwwroot
+echo Make $projectName.Solution/$projectName/wwwroot directory...
+mkdir $projectName.Solution/$projectName/wwwroot/css
+echo Make $projectName.Solution/$projectName/wwwroot/css directory...
+touch $projectName.Solution/$projectName/wwwroot/css/styles.css
+mkdir $projectName.Solution/$projectName/wwwroot/img
+echo Make $projectName.Solution/$projectName/wwwroot/img directory...
+mkdir $projectName.Solution/$projectName/wwwroot/js
+echo Make $projectName.Solution/$projectName/wwwroot/js directory...
+touch $projectName.Solution/$projectName/wwwroot/js/scripts.js
+
 
 # .gitignore
 touch $projectName.Solution/$projectName/.gitignore
