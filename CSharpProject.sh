@@ -138,6 +138,18 @@ echo implement dotnet restore at \test directory...
 # make models directory
 mkdir $projectName.Solution/$projectName/Models
 echo Make $projectName.Solution/$projectName/Models directory...
+touch $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo 'using System;' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo 'using System.Collections.Generic;' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo '' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo 'namespace '$projectName'.Models' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo '{' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo '    public class CustomClassHere' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo '    {' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo ''
+echo '    }' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
+echo '}' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
+
 
 # make controllers directory
 mkdir $projectName.Solution/$projectName/Controllers
@@ -145,6 +157,7 @@ echo Make $projectName.Solution/$projectName/Controllers directory...
 
 # make project home controller file
 touch $projectName.Solution/$projectName/Controllers/HomeController.cs
+echo 'using System.Collections.Generic;' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo 'using Microsoft.AspNetCore.Mvc;' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo 'using '$projectName'.Models;' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
 echo '' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
