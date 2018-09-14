@@ -235,10 +235,10 @@ touch $projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTes
 echo 'using Microsoft.VisualStudio.TestTools.UnitTesting;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
 echo 'using Microsoft.AspNetCore.Mvc;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
 echo 'using System.Collections.Generic;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
-echo 'using $projectName.Controllers;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
-echo 'using $projectName.Models;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using '$projectName'.Controllers;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using '$projectName'.Models;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
 echo '' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
-echo 'namespace $projectName.Tests' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'namespace '$projectName'.Tests' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
 echo '{' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
 echo '    [TestClass]' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
 echo '    public class HomeControllerTest' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
@@ -248,9 +248,9 @@ echo '}' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControll
 
 touch $projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
 echo 'using Microsoft.VisualStudio.TestTools.UnitTesting;' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
-echo 'using $projectName.Models;' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo 'using '$projectName'.Models;' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
 echo ' ' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
-echo 'namespace $projectName.Tests' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo 'namespace '$projectName'.Tests' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
 echo '{' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
 echo ' ' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
 echo '}' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
