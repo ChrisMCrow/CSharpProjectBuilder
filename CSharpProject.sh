@@ -150,7 +150,6 @@ echo '' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '    }' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '}' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 
-
 # make controllers directory
 mkdir $projectName.Solution/$projectName/Controllers
 echo Make $projectName.Solution/$projectName/Controllers directory...
@@ -225,6 +224,33 @@ echo 'obj/' >> $projectName.Solution/$projectName/.gitignore
 echo 'bin/' >> $projectName.Solution/$projectName/.gitignore
 
 
-# make models.test directory
+# make ModelTests and ControllerTests directory
 mkdir $projectName.Solution/$projectName.Tests/ModelTests
 echo Make $projectName.Solution/$projectName.Tests/ModelTests directory...
+mkdir $projectName.Solution/$projectName.Tests/ControllerTests
+echo Make $projectName.Solution/$projectName.Tests/ControllerTests directory...
+
+# make HomeControllerTests.cs & ModelTests.cs
+touch $projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using Microsoft.VisualStudio.TestTools.UnitTesting;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using Microsoft.AspNetCore.Mvc;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using System.Collections.Generic;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using $projectName.Controllers;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'using $projectName.Models;' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo 'namespace $projectName.Tests' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '{' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '    [TestClass]' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '    public class HomeControllerTest' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '    {' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '    }' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+echo '}' >>$projectName.Solution/$projectName.Tests/ControllerTests/HomeControllerTests.cs
+
+touch $projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo 'using Microsoft.VisualStudio.TestTools.UnitTesting;' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo 'using $projectName.Models;' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo ' ' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo 'namespace $projectName.Tests' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo '{' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo ' ' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
+echo '}' >>$projectName.Solution/$projectName.Tests/ModelTests/ModelTests.cs
