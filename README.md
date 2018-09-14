@@ -1,11 +1,11 @@
-# csharp-project-builder
+# CSharp Project Builder
 A shell file for building Epicodus csharp projects
 
 #### **Chris Crow**
 
 ## Description
 
-Run this file in the terminal to create all files and folders for Epicodus CSharp Projects. Specifications are current through C# Week 2, Day 1.
+Run this file in the terminal to create all files and folders for Epicodus CSharp Projects. Specifications are current through C# Week 2, Day 4.
 
 ## Setup/Installation Requirements
 
