@@ -197,7 +197,7 @@ echo '</html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
 # make Index.cshtml file
 touch $projectName.Solution/$projectName/Views/Home/Index.cshtml
 echo '@{' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
-echo '    Layout = "_Layout"' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '  Layout = "_Layout";' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
 echo '}' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
 echo '' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
 echo '<div class="container">' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
