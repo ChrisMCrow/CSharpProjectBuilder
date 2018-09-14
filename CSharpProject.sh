@@ -146,9 +146,9 @@ echo 'namespace '$projectName'.Models' >> $projectName.Solution/$projectName/Mod
 echo '{' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '    public class CustomClassHere' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '    {' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
-echo ''
-echo '    }' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
-echo '}' >> $projectName.Solution/$projectName/Controllers/HomeController.cs
+echo '' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo '    }' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo '}' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 
 
 # make controllers directory
@@ -178,22 +178,32 @@ mkdir $projectName.Solution/$projectName/Views/Shared
 echo Make $projectName.Solution/$projectName/Views/Shared directory...
 
 # make _Layout.cshtml file
-touch $projectName.Solution/$projectName/Views/Shared/_Layout
-echo '<!DOCTYPE html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '<html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '  <head>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    <meta charset="utf-8">' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    <title>$projectName</title>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    <link rel="stylesheet" href="~/css/styles.css">' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    <script src="~/js/scripts.js"></script>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '  </head>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '  <body>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '    @RenderBody()' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '  </body>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
-echo '</html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout
+touch $projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '<!DOCTYPE html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '<html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '  <head>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    <meta charset="utf-8">' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    <title>'$projectName'</title>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    <link rel="stylesheet" href="~/css/styles.css">' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    <script src="~/js/scripts.js"></script>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '  </head>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '  <body>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '    @RenderBody()' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '  </body>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
+echo '</html>' >>$projectName.Solution/$projectName/Views/Shared/_Layout.cshtml
 
+
+# make Index.cshtml file
+touch $projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '@{' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '    Layout = "_Layout"' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '}' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '<div class="container">' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
+echo '</div>' >>$projectName.Solution/$projectName/Views/Home/Index.cshtml
 
 
 # make wwwroot directory with img, css, & js directories nested inside
