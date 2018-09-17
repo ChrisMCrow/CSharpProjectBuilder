@@ -36,6 +36,7 @@ echo '    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />' >
 echo '    <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.1.2" />' >> $projectName.Solution/$projectName/$projectName.csproj
 echo '    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />' >> $projectName.Solution/$projectName/$projectName.csproj
 echo '    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.3" />' >> $projectName.Solution/$projectName/$projectName.csproj
+echo '    <PackageReference Include="MySqlConnector" Version="0.45.0" />' >> $projectName.Solution/$projectName/$projectName.csproj
 echo '  </ItemGroup>' >> $projectName.Solution/$projectName/$projectName.csproj
 echo '</Project>' >> $projectName.Solution/$projectName/$projectName.csproj
 echo Initialize $projectName.Solution/$projectName/$projectName.csproj file...
