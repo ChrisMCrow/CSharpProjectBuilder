@@ -85,6 +85,10 @@ echo '                await context.Response.WriteAsync("Hello World!");' >> $pr
 echo '            });' >> $projectName.Solution/$projectName/Startup.cs
 echo '        }' >> $projectName.Solution/$projectName/Startup.cs
 echo '    }' >> $projectName.Solution/$projectName/Startup.cs
+echo '    public static class DBConfiguration' >> $projectName.Solution/$projectName/Startup.cs
+echo '    {' >> $projectName.Solution/$projectName/Startup.cs
+echo '        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo;";' >> $projectName.Solution/$projectName/Startup.cs
+echo '    }' >> $projectName.Solution/$projectName/Startup.cs
 echo '}' >> $projectName.Solution/$projectName/Startup.cs
 
 # implement dotnet restore at project directory
@@ -136,7 +140,7 @@ echo Initialize $projectName.Solution/$projectName.Tests/$projectName.Tests.cspr
 dotnet restore $projectName.Solution/$projectName.Tests
 echo implement dotnet restore at \test directory...
 
-# make models directory
+# make models directory and template.cs
 mkdir $projectName.Solution/$projectName/Models
 echo Make $projectName.Solution/$projectName/Models directory...
 touch $projectName.Solution/$projectName/Models/ModelTemplate.cs
@@ -150,6 +154,25 @@ echo '    {' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '    }' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '}' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+
+# make Database.cs
+touch $projectName.Solution/$projectName/Models/Database.cs
+echo 'using System;' >> $projectName.Solution/$projectName/Models/Database.cs
+echo 'using MySql.Data.MySqlClient;' >> $projectName.Solution/$projectName/Models/Database.cs
+echo 'using ToDoList;' >> $projectName.Solution/$projectName/Models/Database.cs
+echo ' ' >> $projectName.Solution/$projectName/Models/Database.cs
+echo 'namespace ToDoList.Models' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '{' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '    public class DB' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '    {' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '        public static MySqlConnection Connection()' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '        {' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '            MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '            return conn;' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '        }' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '    }' >> $projectName.Solution/$projectName/Models/Database.cs
+echo '}' >> $projectName.Solution/$projectName/Models/Database.cs
+
 
 # make controllers directory
 mkdir $projectName.Solution/$projectName/Controllers
