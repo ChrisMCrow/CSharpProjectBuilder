@@ -81,13 +81,13 @@ echo '                    template: "{controller=Home}/{action=Index}/{id?}");' 
 echo '            });' >> $projectName.Solution/$projectName/Startup.cs
 echo '            app.Run(async (context) =>' >> $projectName.Solution/$projectName/Startup.cs
 echo '            {' >> $projectName.Solution/$projectName/Startup.cs
-echo '                await context.Response.WriteAsync("Hello World!");' >> $projectName.Solution/$projectName/Startup.cs
+echo '                await context.Response.WriteAsync("Stop trying to make fetch happen. Its not going to happen!");' >> $projectName.Solution/$projectName/Startup.cs
 echo '            });' >> $projectName.Solution/$projectName/Startup.cs
 echo '        }' >> $projectName.Solution/$projectName/Startup.cs
 echo '    }' >> $projectName.Solution/$projectName/Startup.cs
 echo '    public static class DBConfiguration' >> $projectName.Solution/$projectName/Startup.cs
 echo '    {' >> $projectName.Solution/$projectName/Startup.cs
-echo '        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo;";' >> $projectName.Solution/$projectName/Startup.cs
+echo '        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database='$projectName';";' >> $projectName.Solution/$projectName/Startup.cs
 echo '    }' >> $projectName.Solution/$projectName/Startup.cs
 echo '}' >> $projectName.Solution/$projectName/Startup.cs
 
@@ -146,6 +146,8 @@ echo Make $projectName.Solution/$projectName/Models directory...
 touch $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo 'using System;' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo 'using System.Collections.Generic;' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo 'using MySql.Data.MySqlClient;' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
+echo 'using '$projectName';' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo 'namespace '$projectName'.Models' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 echo '{' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
@@ -159,9 +161,9 @@ echo '}' >> $projectName.Solution/$projectName/Models/ModelTemplate.cs
 touch $projectName.Solution/$projectName/Models/Database.cs
 echo 'using System;' >> $projectName.Solution/$projectName/Models/Database.cs
 echo 'using MySql.Data.MySqlClient;' >> $projectName.Solution/$projectName/Models/Database.cs
-echo 'using ToDoList;' >> $projectName.Solution/$projectName/Models/Database.cs
+echo 'using '$projectName';' >> $projectName.Solution/$projectName/Models/Database.cs
 echo ' ' >> $projectName.Solution/$projectName/Models/Database.cs
-echo 'namespace ToDoList.Models' >> $projectName.Solution/$projectName/Models/Database.cs
+echo 'namespace '$projectName'.Models' >> $projectName.Solution/$projectName/Models/Database.cs
 echo '{' >> $projectName.Solution/$projectName/Models/Database.cs
 echo '    public class DB' >> $projectName.Solution/$projectName/Models/Database.cs
 echo '    {' >> $projectName.Solution/$projectName/Models/Database.cs
@@ -172,7 +174,6 @@ echo '            return conn;' >> $projectName.Solution/$projectName/Models/Dat
 echo '        }' >> $projectName.Solution/$projectName/Models/Database.cs
 echo '    }' >> $projectName.Solution/$projectName/Models/Database.cs
 echo '}' >> $projectName.Solution/$projectName/Models/Database.cs
-
 
 # make controllers directory
 mkdir $projectName.Solution/$projectName/Controllers
